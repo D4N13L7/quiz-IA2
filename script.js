@@ -1,81 +1,102 @@
-// Seleciona os elementos HTML que manipulados
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
-//Arry de objeto contendo as perguntas e alternativas
 const perguntas = [
     {
-        enunciado: "Qual a idade máxima que um cachorro pode chegar?",
+        enunciado: "Qual espírito de Bijuu o naruto habita dentro dele??",
         alternativas: [
-            "15 anos",
-            "20 anos"
+            "Kyuubi",
+            "Shukaku"
         ],
         correta: 0 // A primeira alternativa é a correta
     },
     {
-        enunciado: "Quantos dias há em um ano bissexto?",
+        enunciado: "Death Note é o nome de um caderno com poderes de?",
         alternativas: [
-            "365",
-            "366"
+            "Matar qualquer humano que tocá-lo",
+            "Matar qualquer humano que tiver o nome escrito nele"
         ],
         correta: 1 // A segunda alternativa é a correta
     },
     {
-        enunciado: "Qual é o maior planeta do nosso sistema solar?",
+        enunciado: "Em Dragon Ball ao pegar todas as esferas do dragão é possível?",
         alternativas: [
-            "Terra",
-            "Júpiter"
+            "Virar um super Sayajin",
+            "Um desejo"
         ],
         correta: 1
     },
     {
-        enunciado: "Qual é a capital da França?",
+        enunciado: "Em Haikyuu qual é o número da camisa do Hinata?",
         alternativas: [
-            "Paris",
-            "Londres"
+            "10",
+            "1"
         ],
         correta: 0
     },
     {
-        enunciado: "Qual é a fórmula química da água?",
+        enunciado: "Quem é a primeira pessoa que entra na tripulação de Luffy?",
         alternativas: [
-            "H2O",
-            "CO2"
+            "Zoro",
+            "Nami"
         ],
         correta: 0
     }
 ];
 
-let atual = 0
-let pergutaAtual;
-let pontuacao = 0;
+let atual = 0;
+let perguntaAtual;
+let pontuacao = 0; // Inicie a pontuação em 0
 
-//FUNÇÃO MOSTRAR PERGUNTAS
-function mostrarPergunta() {
+function mostraPergunta() {
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.innerHTML = "";
+    caixaAlternativas.innerHTML = ''; // Limpa as alternativas anteriores
 
-    pergutaAtual.alternativas.forEach((alternativas, index) => {
-        const botao = document.createElement("button");
-        botao.addEventListener("click", () => verificaResposta(index));
+    // Cria botões para as alternativas
+    perguntaAtual.alternativas.forEach((alternativa, index) => {
+        const botao = document.createElement('button');
+        botao.textContent = alternativa;
+        botao.addEventListener('click', () => verificaResposta(index));
         caixaAlternativas.appendChild(botao);
     });
 }
 
-// FUNÇÃO VERIFICAR RESPOSTA
-function vereficaResposta(Seleciona) {
-    if (selecionda === pergutaAtual.correta) {
+function verificaResposta(selecionada) {
+    if (selecionada === perguntaAtual.correta) {
         pontuacao++;
     }
     atual++;
-
     if (atual < perguntas.length) {
-        mostrarPergunta();
+        mostraPergunta();
     } else {
-        mostarResultado();
+        mostraResultado();
     }
 }
+
+function mostraResultado() {
+    caixaPrincipal.style.display = 'none'; // Esconde a caixa de perguntas
+    caixaResultado.style.display = 'block'; // Mostra a caixa de resultado
+    setTimeout(() => caixaResultado.classList.add('mostrar'), 10); // Adiciona classe para animação
+    textoResultado.textContent = `Você acertou ${pontuacao} de ${perguntas.length} perguntas!`;
+
+    const botaoReiniciar = document.createElement('button');
+    botaoReiniciar.textContent = 'Reiniciar';
+    botaoReiniciar.addEventListener('click', () => {
+        atual = 0;
+        pontuacao = 0;
+        caixaResultado.classList.remove('mostrar');
+        caixaResultado.style.display = 'none';
+        caixaPrincipal.style.display = 'block';
+        mostraPergunta();
+    });
+    caixaResultado.innerHTML = ''; // Limpa conteúdo anterior
+    caixaResultado.appendChild(textoResultado);
+    caixaResultado.appendChild(botaoReiniciar);
+}
+
+// Inicializa a primeira pergunta
+mostraPergunta();
