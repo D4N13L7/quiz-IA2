@@ -6,42 +6,42 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Qual espírito de Bijuu o naruto habita dentro dele??",
+        enunciado: "Qual foi o primeiro piloto a vencer um campeonato mundial de Fórmula 1?",
         alternativas: [
-            "Kyuubi",
-            "Shukaku"
+            "Juan Manuel Fangio",
+            "Giuseppe Farina"
         ],
         correta: 0 // A primeira alternativa é a correta
     },
     {
-        enunciado: "Death Note é o nome de um caderno com poderes de?",
+        enunciado: "Em que ano a Fórmula 1 introduziu a regra do DRS (Drag Reduction System)?",
         alternativas: [
-            "Matar qualquer humano que tocá-lo",
-            "Matar qualquer humano que tiver o nome escrito nele"
+            "2009",
+            "2011"
         ],
         correta: 1 // A segunda alternativa é a correta
     },
     {
-        enunciado: "Em Dragon Ball ao pegar todas as esferas do dragão é possível?",
+        enunciado: "Qual equipe detém o recorde de mais vitórias consecutivas em uma temporada?",
         alternativas: [
-            "Virar um super Sayajin",
-            "Um desejo"
+            " Mercedes",
+            "Red Bull Racing"
         ],
         correta: 1
     },
     {
-        enunciado: "Em Haikyuu qual é o número da camisa do Hinata?",
+        enunciado: "Quem é o único piloto a ter vencido corridas com cinco equipes diferentes?",
         alternativas: [
-            "10",
-            "1"
+            " Lewis Hamilton",
+            "Fernando Alonso"
         ],
         correta: 0
     },
     {
-        enunciado: "Quem é a primeira pessoa que entra na tripulação de Luffy?",
+        enunciado: "Qual é o nome da pista que sediou o primeiro Grande Prêmio de Fórmula 1?",
         alternativas: [
-            "Zoro",
-            "Nami"
+            "Silverstone",
+            "Monza"
         ],
         correta: 0
     }
