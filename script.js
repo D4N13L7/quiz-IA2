@@ -19,7 +19,7 @@ const perguntas = [
             "2009",
             "2011"
         ],
-        correta: 1 // A segunda alternativa é a correta
+        correta: 0 // A segunda alternativa é a correta
     },
     {
         enunciado: "Qual equipe detém o recorde de mais vitórias consecutivas em uma temporada?",
@@ -27,7 +27,7 @@ const perguntas = [
             " Mercedes",
             "Red Bull Racing"
         ],
-        correta: 1
+        correta: 0
     },
     {
         enunciado: "Quem é o único piloto a ter vencido corridas com cinco equipes diferentes?",
@@ -35,7 +35,7 @@ const perguntas = [
             " Lewis Hamilton",
             "Fernando Alonso"
         ],
-        correta: 0
+        correta: 1
     },
     {
         enunciado: "Qual é o nome da pista que sediou o primeiro Grande Prêmio de Fórmula 1?",
