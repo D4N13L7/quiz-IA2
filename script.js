@@ -11,7 +11,7 @@ const perguntas = [
             "Juan Manuel Fangio",
             "Giuseppe Farina"
         ],
-        correta: 0 // A primeira alternativa é a correta
+        correta: 1 // A primeira alternativa é a correta
     },
     {
         enunciado: "Em que ano a Fórmula 1 introduziu a regra do DRS (Drag Reduction System)?",
@@ -19,7 +19,7 @@ const perguntas = [
             "2009",
             "2011"
         ],
-        correta: 0 // A segunda alternativa é a correta
+        correta: 1 // A segunda alternativa é a correta
     },
     {
         enunciado: "Qual equipe detém o recorde de mais vitórias consecutivas em uma temporada?",
